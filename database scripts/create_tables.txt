@@ -1,0 +1,41 @@
+CREATE TABLE `articulos` (
+  `nombre` varchar(150) NOT NULL,
+  `precio` float NOT NULL,
+  PRIMARY KEY (`nombre`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `iva` (
+  `valor` int(11) NOT NULL,
+  PRIMARY KEY (`valor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `clientes` (
+  `DNI` varchar(10) NOT NULL,
+  `Nombre` varchar(15) NOT NULL,
+  `Apellidos` varchar(45) DEFAULT NULL,
+  `Direccion` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`DNI`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `contadorfacturas` (
+  `year` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`year`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table created to count bills of every year';
+
+CREATE TABLE `tarifa_minuto` (
+  `minuto` double NOT NULL,
+  PRIMARY KEY (`minuto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `visitas` (
+  `DNI` varchar(10) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `comentario` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`DNI`,`fecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `automateix`.`iva`
+(`valor`)
+VALUES
+(21);
